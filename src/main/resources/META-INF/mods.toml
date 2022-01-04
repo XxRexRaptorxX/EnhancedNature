@@ -5,7 +5,7 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/enhancednature/iss
 
 [[mods]]
 modId="enhanced_nature"
-version="1.0.2"
+version="1.0.3"
 displayName="EnhancedNature"
 itemIcon="minecraft:oak_sapling"
 updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Nature.json"
