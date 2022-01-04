@@ -13,9 +13,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0.3'
-group = 'xxrexraptorxx.nature.main' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'nature'
+version = '1.0.2'
+group = 'xxrexraptorxx.enhanced_nature.main' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'enhanced_nature'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -100,7 +100,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'nature', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'enhanced_nature', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 examplemod {
@@ -147,7 +147,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "nature",
+                "Specification-Title"     : "enhanced_nature",
                 "Specification-Vendor"    : "XxRexRaptorxX",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
