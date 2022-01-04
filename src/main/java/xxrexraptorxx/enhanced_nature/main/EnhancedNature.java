@@ -5,6 +5,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xxrexraptorxx.enhanced_nature.utils.Config;
 
+/**
+ * @author XxRexRaptorxX (RexRaptor)
+ * @projectPage https://www.curseforge.com/minecraft/mc-mods/enhancednature
+ **/
 @Mod(References.MODID)
 public class EnhancedNature {
 
