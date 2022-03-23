@@ -20,7 +20,6 @@ import xxrexraptorxx.enhanced_nature.main.ModBlocks;
 import xxrexraptorxx.enhanced_nature.main.References;
 import xxrexraptorxx.enhanced_nature.utils.Config;
 
-@Mod.EventBusSubscriber(modid = References.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OreGenerator {
 
     public static final RuleTest SAND = new BlockMatchTest(Blocks.SAND);
