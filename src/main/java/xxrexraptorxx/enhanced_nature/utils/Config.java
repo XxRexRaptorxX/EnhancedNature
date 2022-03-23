@@ -55,7 +55,7 @@ public class Config {
         CLAY_VEIN_RARITY = builder.comment("The rarity of Clay veins (veins per chunk), 0 = no veins").defineInRange("clay_vein_rarity", 10, 0, 100);
         SAND_VEIN_RARITY = builder.comment("The rarity of Sand veins (veins per chunk), 0 = no veins").defineInRange("sand_vein_rarity", 10, 0, 100);
         SANDSTONE_VEIN_RARITY = builder.comment("The rarity of Sandstone veins (veins per chunk), 0 = no veins").defineInRange("sandstone_vein_rarity", 10, 0, 100);
-        COBBLESTONE_VEIN_RARITY = builder.comment("The rarity of Cobblestone veins (veins per chunk), 0 = no veins").defineInRange("cobblestone_vein_rarity", 10, 0, 100);
+        COBBLESTONE_VEIN_RARITY = builder.comment("The rarity of Cobblestone and Cobbled Deepslate veins (veins per chunk), 0 = no veins").defineInRange("cobblestone_vein_rarity", 10, 0, 100);
         STONE_VEIN_RARITY = builder.comment("The rarity of stone veins in deepslate (veins per chunk), 0 = no veins").defineInRange("stone_vein_rarity", 10, 0, 100);
         DEEPSLATE_VEIN_RARITY = builder.comment("The rarity of Clay veins (veins per chunk), 0 = no veins").defineInRange("deepslate_vein_rarity", 1, 0, 100);
         SILVERFISH_BLOCK_VEIN_RARITY = builder.comment("The rarity of Silverfish block veins (veins per chunk), 0 = no veins").defineInRange("silverfish_vein_rarity", 5, 0, 100);

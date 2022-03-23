@@ -1,9 +1,12 @@
 package xxrexraptorxx.enhanced_nature.main;
 
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xxrexraptorxx.enhanced_nature.utils.Config;
+import xxrexraptorxx.enhanced_nature.utils.ModSetup;
 
 /**
  * @author XxRexRaptorxX (RexRaptor)
@@ -15,7 +18,12 @@ public class EnhancedNature {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public EnhancedNature() {
+
+        ModSetup.setup();
         ModBlocks.init();
         Config.init();
+
+        IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+        modbus.addListener(ModSetup::init);
     }
 }
