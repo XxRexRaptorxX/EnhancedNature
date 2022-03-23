@@ -44,16 +44,6 @@ public class OreGenerator {
     public static Holder<PlacedFeature> QUICK_SAND_GEN;
 
 
-
-    /**
-            if (event.getCategory() == Biome.BiomeCategory.SWAMP) {
-                genOre(event.getGeneration(), DIRT, ModBlocks.MUD.get().defaultBlockState(), 20, 50, 64, 20);
-            }
-            if (event.getCategory() == Biome.BiomeCategory.JUNGLE) {
-                genOre(event.getGeneration(), SAND, ModBlocks.QUICK_SAND.get().defaultBlockState(), 20, 50, 100, 20);
-**/
-
-
     public static void registerConfiguredFeatures() {
         OreConfiguration clayConfig = new OreConfiguration(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.CLAY.defaultBlockState(), 20);
         CLAY_GEN = registerPlacedFeature("clay", new ConfiguredFeature<>(Feature.ORE, clayConfig),
