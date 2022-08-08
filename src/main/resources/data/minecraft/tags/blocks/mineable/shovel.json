@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "enhanced_nature:quicksand",
-    "enhanced_nature:mud"
+    "enhanced_nature:quicksand"
   ]
 }
