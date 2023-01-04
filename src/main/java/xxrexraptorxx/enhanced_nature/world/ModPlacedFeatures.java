@@ -15,14 +15,6 @@ public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, References.MODID);
 
 
-    public static final RegistryObject<PlacedFeature> QUICKSAND_PLACED = PLACED_FEATURES.register("quicksand_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.QUICKSAND.getHolder().get(),
-                    commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.absolute(100)))));
-
-    public static final RegistryObject<PlacedFeature> CLAY_PLACED = PLACED_FEATURES.register("clay_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.CLAY.getHolder().get(),
-                    commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(80)))));
-
     public static final RegistryObject<PlacedFeature> COBBLESTONE_PLACED = PLACED_FEATURES.register("cobblestone_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.COBBLESTONE.getHolder().get(),
                     commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(80)))));
@@ -54,23 +46,3 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> CALCITE_PLACED = PLACED_FEATURES.register("calcite_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.CALCITE.getHolder().get(),
                     commonOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(80)))));
-
-
-
-    public static List<PlacementModifier> orePlacement(PlacementModifier type, PlacementModifier codec) {
-        return List.of(type, InSquarePlacement.spread(), codec, BiomeFilter.biome());
-    }
-
-    public static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier placement) {
-        return orePlacement(CountPlacement.of(count), placement);
-    }
-
-    public static List<PlacementModifier> rareOrePlacement(int count, PlacementModifier placement) {
-        return orePlacement(RarityFilter.onAverageOnceEvery(count), placement);
-    }
-
-
-    public static void register(IEventBus eventBus) {
-        PLACED_FEATURES.register(eventBus);
-    }
-}

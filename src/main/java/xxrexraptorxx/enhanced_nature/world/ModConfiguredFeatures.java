@@ -22,15 +22,6 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, References.MODID);
 
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> QUICKSAND_GEN = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(new BlockMatchTest(Blocks.SAND), ModBlocks.QUICK_SAND.get().defaultBlockState())));
-
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> CLAY_GEN = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.CLAY.defaultBlockState())));
-
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> COBBLESTONE_GEN = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.COBBLESTONE.defaultBlockState())));
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> INFESTED_STONE_GEN = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.INFESTED_STONE.defaultBlockState())));
 
@@ -51,20 +42,6 @@ public class ModConfiguredFeatures {
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> CALCITE_GEN = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.CALCITE.defaultBlockState())));
-
-
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> QUICKSAND = CONFIGURED_FEATURES.register("quicksand",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(QUICKSAND_GEN.get(),20)));//TODO size
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CLAY = CONFIGURED_FEATURES.register("clay",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(CLAY_GEN.get(),20)));
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> COBBLESTONE = CONFIGURED_FEATURES.register("cobblestone",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(COBBLESTONE_GEN.get(),20)));
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> INFESTED_STONE = CONFIGURED_FEATURES.register("infested_stone",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(INFESTED_STONE_GEN.get(),5)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SAND = CONFIGURED_FEATURES.register("sand",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SAND_GEN.get(),20)));

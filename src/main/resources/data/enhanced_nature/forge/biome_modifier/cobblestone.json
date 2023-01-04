@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "enhanced_nature:cobblestone_placed",
+  "features": "enhanced_nature:cobblestone_gen",
   "step": "underground_ores"
 }

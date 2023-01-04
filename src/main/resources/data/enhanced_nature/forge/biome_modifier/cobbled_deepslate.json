@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "enhanced_nature:cobbled_deepslate_placed",
+  "features": "enhanced_nature:cobbled_deepslate_gen",
   "step": "underground_ores"
 }

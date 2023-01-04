@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "enhanced_nature:stone_placed",
+  "features": "enhanced_nature:stone_gen",
   "step": "underground_ores"
 }

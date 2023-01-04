@@ -9,30 +9,20 @@ import net.minecraftforge.fml.config.ModConfig;
 public class Config {
 
     public static final String CATEGORY_GENERAL = "general";
-    public static final String CATEGORY_WORLD = "world";
 
     public static ForgeConfigSpec CLIENT_CONFIG;
-    public static ForgeConfigSpec COMMON_CONFIG;
+    public static ForgeConfigSpec SERVER_CONFIG;
 
     public static ForgeConfigSpec.BooleanValue UPDATE_CHECKER;
     public static ForgeConfigSpec.BooleanValue PATREON_REWARDS;
 
-    public static ForgeConfigSpec.IntValue SANDSTONE_VEIN_RARITY;
-    public static ForgeConfigSpec.IntValue CLAY_VEIN_RARITY;
-    public static ForgeConfigSpec.IntValue DEEPSLATE_VEIN_RARITY;
-    public static ForgeConfigSpec.IntValue SAND_VEIN_RARITY;
-    public static ForgeConfigSpec.IntValue COBBLESTONE_VEIN_RARITY;
-    public static ForgeConfigSpec.IntValue STONE_VEIN_RARITY;
-    public static ForgeConfigSpec.IntValue SILVERFISH_BLOCK_VEIN_RARITY;
-    public static ForgeConfigSpec.BooleanValue GENERATE_QUICKSAND;
-
 
     public static void init() {
         initClient();
-        initCommon();
+        initServer();
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_CONFIG);
     }
 
 
@@ -47,26 +37,14 @@ public class Config {
     }
 
 
-    public static void initCommon() {
+    public static void initServer() {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
         builder.comment("General").push(CATEGORY_GENERAL);
         PATREON_REWARDS = builder.comment("Enables ingame rewards on first spawn for Patreons").define("patreon_rewards", true);
         builder.pop();
 
-        /**     TODO
-        builder.comment("World").push(CATEGORY_WORLD);
-        CLAY_VEIN_RARITY = builder.comment("The rarity of Clay veins (veins per chunk), 0 = no veins").defineInRange("clay_vein_rarity", 10, 0, 100);
-        SAND_VEIN_RARITY = builder.comment("The rarity of Sand veins (veins per chunk), 0 = no veins").defineInRange("sand_vein_rarity", 10, 0, 100);
-        SANDSTONE_VEIN_RARITY = builder.comment("The rarity of Sandstone veins (veins per chunk), 0 = no veins").defineInRange("sandstone_vein_rarity", 10, 0, 100);
-        COBBLESTONE_VEIN_RARITY = builder.comment("The rarity of Cobblestone and Cobbled Deepslate veins (veins per chunk), 0 = no veins").defineInRange("cobblestone_vein_rarity", 10, 0, 100);
-        STONE_VEIN_RARITY = builder.comment("The rarity of stone veins in deepslate (veins per chunk), 0 = no veins").defineInRange("stone_vein_rarity", 10, 0, 100);
-        DEEPSLATE_VEIN_RARITY = builder.comment("The rarity of Clay veins (veins per chunk), 0 = no veins").defineInRange("deepslate_vein_rarity", 1, 0, 100);
-        SILVERFISH_BLOCK_VEIN_RARITY = builder.comment("The rarity of Silverfish block veins (veins per chunk), 0 = no veins").defineInRange("silverfish_vein_rarity", 5, 0, 100);
-        GENERATE_QUICKSAND = builder.comment("Activate/Deactivate Quicksand generation in your world").define("quicksand_generation", true);
-        builder.pop();
-        **/
-        COMMON_CONFIG = builder.build();
+        SERVER_CONFIG = builder.build();
     }
 
 
