@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[41,)"
+loaderVersion="[44,)"
 license="All rights reserved"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/enhancednature/issues"
 
 [[mods]]
 modId="enhanced_nature"
-version="1.0.4"
+version="1.1.0"
 displayName="EnhancedNature"
 itemIcon="minecraft:oak_sapling"
 updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Nature.json"
@@ -20,13 +20,13 @@ Enhances the nature of your world!
 [[dependencies.enhanced_nature]]
     modId="forge"
     mandatory=true
-    versionRange="[41,)"
+    versionRange="[44,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.enhanced_nature]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19,1.20)"
+    versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
