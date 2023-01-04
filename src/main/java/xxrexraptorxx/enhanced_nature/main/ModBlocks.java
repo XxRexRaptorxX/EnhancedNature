@@ -1,7 +1,6 @@
 package xxrexraptorxx.enhanced_nature.main;
 
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,7 +23,7 @@ public class ModBlocks {
     }
 
     public static final RegistryObject<BlockQuicksand> QUICK_SAND = BLOCKS.register("quicksand", BlockQuicksand::new);
-    public static final RegistryObject<Item> QUICK_SAND_BLOCKITEM = ITEMS.register("quicksand", () -> new BlockItem(QUICK_SAND.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final RegistryObject<Item> QUICK_SAND_BLOCKITEM = ITEMS.register("quicksand", () -> new BlockItem(QUICK_SAND.get(), new Item.Properties()));
 
     //public static final RegistryObject<Block> POISONED_IVY = BLOCKS.register("poisoned_ivy", () -> new FlowerBlock(MobEffects.POISON, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
     //public static final RegistryObject<Item> POISONED_IVY_BLOCKITEM = ITEMS.register("poisoned_ivy", () -> new BlockItem(POISONED_IVY.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));

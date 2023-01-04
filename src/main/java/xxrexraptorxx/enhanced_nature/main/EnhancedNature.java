@@ -6,8 +6,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xxrexraptorxx.enhanced_nature.utils.Config;
-import xxrexraptorxx.enhanced_nature.world.ModConfiguredFeatures;
-import xxrexraptorxx.enhanced_nature.world.ModPlacedFeatures;
 
 /**
  * @author XxRexRaptorxX (RexRaptor)
@@ -23,8 +21,5 @@ public class EnhancedNature {
 
         ModBlocks.init();
         Config.init();
-
-        ModConfiguredFeatures.register(modbus);
-        ModPlacedFeatures.register(modbus);
     }
 }
