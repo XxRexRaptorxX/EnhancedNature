@@ -1,7 +1,6 @@
 package xxrexraptorxx.enhanced_nature.blocks;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
@@ -10,8 +9,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -23,11 +22,12 @@ public class BlockQuicksand extends FallingBlock {
 
 
 	public BlockQuicksand() {
-		super(Properties.of(Material.SAND)
+		super(Properties.of()
 				.strength(0.65F, 0.0F)
 				.sound(SoundType.SAND)
-				.color(MaterialColor.SAND)
+				.mapColor(MapColor.SAND)
 				.noOcclusion()
+				.instrument(NoteBlockInstrument.SNARE)
 		);
 	}
 
