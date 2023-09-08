@@ -1,6 +1,6 @@
 {
   "start_pool": "enhanced_nature:oak_tree_1",
-  "biomes": "#minecraft:is_forest",
+  "biomes": "#enhanced_nature:forest_plains",
   "adapt_noise": true,
   "type": "minecraft:jigsaw",
   "step": "vegetal_decoration",
