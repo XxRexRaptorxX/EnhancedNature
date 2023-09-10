@@ -13,9 +13,7 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/enhancednature"
 logoFile="logo.png"
 #credits=""
 authors="XxRexRaptorxX (RexRaptor)"
-description='''
-Enhances the nature of your world!
-'''
+description='''Enhances the nature of your world!'''
 
 [[dependencies.enhanced_nature]]
     modId="forge"
