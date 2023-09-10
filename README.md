@@ -22,9 +22,7 @@ This Mod enhances your world with new world features!
 - Quicksand added
 - Config options for all features!
 
-
-If you want to play a mod similar to this for MC 1.12.x try [QuickFix](https://www.curseforge.com/minecraft/mc-mods/quickfix)!
-
+![](https://github.com/XxRexRaptorxX/General/blob/main/2023-09-07_19.50.02.png?raw=true)
 ![](https://i.imgur.com/22H38rA.png)
 
 -----
