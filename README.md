@@ -19,7 +19,6 @@ This Mod enhances your world with new world features!
 - Clay veins
 - Deepslate veins
 - Silverfish stone veins
-- Mud added
 - Quicksand added
 - Configurable via datpack!
 
