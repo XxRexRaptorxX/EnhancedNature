@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "enhanced_nature:acacia_tree_1",
+    "enhanced_nature:acacia_tree_2",
+    "enhanced_nature:acacia_tree_3",
+    "enhanced_nature:birch_tree_1",
+    "enhanced_nature:birch_tree_2",
+    "enhanced_nature:birch_tree_3",
+    "enhanced_nature:cherry_tree_1",
+    "enhanced_nature:cherry_tree_2",
+    "enhanced_nature:cherry_tree_3",
+    "enhanced_nature:dark_oak_tree_1",
+    "enhanced_nature:dark_oak_tree_2",
+    "enhanced_nature:dead_tree_1",
+    "enhanced_nature:dead_tree_2",
+    "enhanced_nature:nether_tree_1",
+    "enhanced_nature:nether_tree_2",
+    "enhanced_nature:nether_tree_3",
+    "enhanced_nature:nether_tree_4",
+    "enhanced_nature:nether_tree_5",
+    "enhanced_nature:oak_tree_1",
+    "enhanced_nature:oak_tree_2",
+    "enhanced_nature:oak_tree_3",
+    "enhanced_nature:palm_tree_1",
+    "enhanced_nature:palm_tree_2",
+    "enhanced_nature:savanna_tree_1",
+    "enhanced_nature:savanna_tree_2",
+    "enhanced_nature:spruce_tree_1",
+    "enhanced_nature:spruce_tree_2",
+    "enhanced_nature:spruce_tree_3"
+  ]
+}
