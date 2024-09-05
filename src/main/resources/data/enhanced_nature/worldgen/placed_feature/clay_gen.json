@@ -2,14 +2,8 @@
   "feature": "enhanced_nature:clay_gen",
   "placement": [
     {
-      "count": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 15,
-          "max_inclusive": 20
-        }
-      },
-      "type": "minecraft:count"
+      "type": "minecraft:count",
+      "count": 15
     },
     {
       "type": "minecraft:in_square"

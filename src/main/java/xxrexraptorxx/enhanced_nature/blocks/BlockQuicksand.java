@@ -1,5 +1,6 @@
 package xxrexraptorxx.enhanced_nature.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,8 +19,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BlockQuicksand extends FallingBlock {
 
+	public static final MapCodec<BlockQuicksand> CODEC = simpleCodec(BlockQuicksand::new);
 	protected static final VoxelShape CUSTOM_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
 
+	public BlockQuicksand(Properties properties) {
+		super(properties);
+	}
 
 	public BlockQuicksand() {
 		super(Properties.of()
@@ -46,6 +51,12 @@ public class BlockQuicksand extends FallingBlock {
 			entity.makeStuckInBlock(state, new Vec3(0.25D, 0.10D, 0.25D));
 			if(entity.getEyePosition().y < pos.getY() + 1) entity.hurt(level.damageSources().inWall(), 1.0F);
 		}
+	}
+
+
+	@Override
+	protected MapCodec<? extends FallingBlock> codec() {
+		return CODEC;
 	}
 
 }
