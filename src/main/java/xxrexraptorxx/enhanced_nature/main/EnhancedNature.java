@@ -12,7 +12,7 @@ import xxrexraptorxx.enhanced_nature.utils.Config;
 
 /**
  * @author XxRexRaptorxX (RexRaptor)
- * @projectPage https://www.curseforge.com/minecraft/mc-mods/enhancednature
+ * @projectPage <a href="https://www.curseforge.com/minecraft/mc-mods/enhancednature">...</a>
  **/
 @Mod(References.MODID)
 public class EnhancedNature {
