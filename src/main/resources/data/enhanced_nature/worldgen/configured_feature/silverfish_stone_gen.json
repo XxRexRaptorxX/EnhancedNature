@@ -10,7 +10,7 @@
           "tag": "minecraft:stone_ore_replaceables"
         },
         "state": {
-          "Name": "minecraft:invested_stone"
+          "Name": "minecraft:infested_stone"
         }
       }
     ]
