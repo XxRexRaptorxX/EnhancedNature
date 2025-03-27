@@ -1,6 +1,6 @@
 {
   "start_pool": "enhanced_nature:dead_tree_1",
-  "biomes": "#forge:is_sparse/overworld",
+  "biomes": "#c:is_sparse_vegetation/overworld",
   "adapt_noise": true,
   "type": "minecraft:jigsaw",
   "step": "vegetal_decoration",
