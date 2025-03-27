@@ -1,15 +1,21 @@
 package xxrexraptorxx.enhanced_nature.main;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xxrexraptorxx.enhanced_nature.blocks.BlockQuicksand;
 
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 public class ModBlocks {
 
@@ -22,17 +28,31 @@ public class ModBlocks {
         ITEMS.register(bus);
     }
 
-    public static final DeferredBlock<BlockQuicksand> QUICK_SAND = registerBlock("quicksand", BlockQuicksand::new);
+
+    public static final DeferredBlock<BlockQuicksand> QUICK_SAND = registerBlock("quicksand", properties -> new BlockQuicksand(properties
+            .strength(0.65F, 0.0F)
+            .sound(SoundType.SAND)
+            .mapColor(MapColor.SAND)
+            .noOcclusion()
+            .instrument(NoteBlockInstrument.SNARE)
+    ));
 
 
-
-    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
-        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
+    public static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> blockCreator) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, () -> blockCreator.apply(BlockBehaviour.Properties.of().setId(blockId(name))));
+        registerBlockItems(name, toReturn);
         return toReturn;
     }
 
-    private static <T extends Block> DeferredItem registerBlockItem(String name, DeferredBlock<T> block) {
-        return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    public static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block) {
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().setId(itemId(name)).useBlockDescriptionPrefix()));
+    }
+
+    public static ResourceKey<Block> blockId(String name) {
+        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(References.MODID, name));
+    }
+
+    public static ResourceKey<Item> itemId(String name) {
+        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(References.MODID, name));
     }
 }

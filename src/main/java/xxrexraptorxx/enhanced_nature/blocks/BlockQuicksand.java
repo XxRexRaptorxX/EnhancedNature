@@ -3,14 +3,13 @@ package xxrexraptorxx.enhanced_nature.blocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -26,16 +25,6 @@ public class BlockQuicksand extends FallingBlock {
 		super(properties);
 	}
 
-	public BlockQuicksand() {
-		super(Properties.of()
-				.strength(0.65F, 0.0F)
-				.sound(SoundType.SAND)
-				.mapColor(MapColor.SAND)
-				.noOcclusion()
-				.instrument(NoteBlockInstrument.SNARE)
-		);
-	}
-
 
 	@Override
 	public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -44,7 +33,7 @@ public class BlockQuicksand extends FallingBlock {
 
 
 	@Override
-	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entityIn) {
+	protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entityIn, InsideBlockEffectApplier effectApplier) {
 		if (entityIn instanceof LivingEntity) {
 			LivingEntity entity = (LivingEntity) entityIn;
 
@@ -57,6 +46,12 @@ public class BlockQuicksand extends FallingBlock {
 	@Override
 	protected MapCodec<? extends FallingBlock> codec() {
 		return CODEC;
+	}
+
+
+	@Override
+	public int getDustColor(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+		return defaultMapColor().calculateARGBColor(MapColor.Brightness.NORMAL);
 	}
 
 }
