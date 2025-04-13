@@ -1,6 +1,6 @@
 {
   "start_pool": "enhanced_nature:palm_tree_1",
-  "biomes": "#forge:is_sandy",
+  "biomes": "#c:is_sandy",
   "adapt_noise": true,
   "type": "minecraft:jigsaw",
   "step": "vegetal_decoration",
