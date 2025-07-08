@@ -28,6 +28,10 @@ This Mod enhances your world with new world features!
 - Quicksand added
 - configurable via datapack!
 
+-----
+
+Tree generation from [Rex's Tree Pack](https://www.curseforge.com/minecraft/worlds/rexs-tree-pack)
+
 
 <p align="center">
   <img src="https://github.com/XxRexRaptorxX/General/blob/main/page_decorations/line.png?raw=true" alt="line" width="2000"/>
