@@ -6,7 +6,6 @@
 </p>
 <p align="center">
   <img src="https://github.com/XxRexRaptorxX/EnhancedNature/blob/main/src/main/resources/enhanced_nature_logo.png?raw=true" alt="logo"/><br>
-  <img src="https://github.com/XxRexRaptorxX/General/blob/main/page_decorations/line_curved.png?raw=true" alt="line" width="2000"/>
 </p>
 
 
