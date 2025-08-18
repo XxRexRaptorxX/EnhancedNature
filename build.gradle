@@ -202,6 +202,7 @@ afterEvaluate {
         token = System.getenv("MODRINTH_TOKEN") ?: project.findProperty("modrinthToken")?.toString()
         projectId = mr_id
         versionType = release_type
+        versionName = "v.${mod_version}"
         uploadFile = jar
         loaders = ["neoforge"]
         gameVersions = parsedGameVersions
