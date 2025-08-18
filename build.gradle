@@ -209,7 +209,7 @@ afterEvaluate {
         failSilently = true
         syncBodyFrom = rootProject.file("README.md").text
         dependencies {
-            // Add dependencies here as needed
+            required.project "magma-core"
         }
     }
 }
