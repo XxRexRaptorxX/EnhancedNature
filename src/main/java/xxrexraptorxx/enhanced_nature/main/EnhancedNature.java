@@ -7,7 +7,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xxrexraptorxx.enhanced_nature.utils.Config;
+import xxrexraptorxx.magmacore.main.ModRegistry;
 
 /**
  * @author XxRexRaptorxX (RexRaptor)
@@ -20,11 +20,9 @@ public class EnhancedNature {
 
     public EnhancedNature(IEventBus bus, ModContainer container) {
         ModBlocks.init(bus);
-        Config.init(container);
-
         bus.addListener(this::addCreative);
+        ModRegistry.register(References.MODID, References.NAME, References.URL);
     }
-
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
