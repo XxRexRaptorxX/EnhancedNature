@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "enhanced_nature:block/quicksand" }
+  "variants": {
+    "": {
+      "model": "enhanced_nature:block/quicksand"
     }
+  }
 }
