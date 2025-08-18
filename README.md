@@ -59,7 +59,7 @@ Tree generation from [Rex's Tree Pack](https://www.curseforge.com/minecraft/worl
 ## 🗃️ Dependencies
 
 ### Required:
-- **Magma Core** (soon!)
+- **Magma Core**
   - Provides basic code and features such as update-checker 
   - [CurseForge][cf_magmacore] | [Modrinth][mr_magmacore]
 
