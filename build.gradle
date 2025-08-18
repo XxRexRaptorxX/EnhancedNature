@@ -193,58 +193,6 @@ publishing {
 // PLATFORM PUBLISHING
 // ========================================
 
-String readLatestChangelog() {
-    //1. from workspace
-    def file = rootProject.file("LATEST_CHANGELOG.md")
-    if (file.exists()) {
-        try {
-            def text = file.getText('UTF-8').trim()
-            if (text) {
-                logger.lifecycle("Using changelog from file: ${file}")
-                return text
-            } else {
-                logger.lifecycle("LATEST_CHANGELOG.md exists but is empty.")
-            }
-        } catch (Exception e) {
-            logger.warn("Fehler beim Lesen von LATEST_CHANGELOG.md: ${e.message}")
-        }
-    } else {
-        logger.lifecycle("LATEST_CHANGELOG.md not found in project root.")
-    }
-
-    //2. from Git-HEAD
-    try {
-        ByteArrayOutputStream stdout = new ByteArrayOutputStream()
-        exec {
-            commandLine 'git', 'show', 'HEAD:LATEST_CHANGELOG.md'
-            standardOutput = stdout
-            // don't fail build if git command fails
-            ignoreExitValue = true
-        }
-        def gitText = stdout.toString('UTF-8').trim()
-        if (gitText) {
-            logger.lifecycle("Using changelog from git HEAD:LATEST_CHANGELOG.md")
-            return gitText
-        } else {
-            logger.lifecycle("No LATEST_CHANGELOG.md content found at git HEAD.")
-        }
-    } catch (Exception e) {
-        logger.warn("Fehler beim Ausführen von 'git show': ${e.message}")
-    }
-
-    // 3. fallback
-    try {
-        def generated = generateLatestChangelog()
-        logger.lifecycle("Using generated changelog (fallback).")
-        return generated
-    } catch (Exception e) {
-        logger.warn("generateLatestChangelog() failed: ${e.message}")
-    }
-
-    logger.lifecycle("No changelog found — returning empty string.")
-    return ""
-}
-
 // Modrinth Configuration
 def rawGameVersions = project.findProperty("game_versions")?.toString() ?: ""
 def parsedGameVersions = rawGameVersions.split(",").collect { it.trim() }
@@ -289,3 +237,55 @@ task publishCurseForge(type: TaskPublishCurseForge) {
     }
 }
 
+// Changelog reading
+String readLatestChangelog() {
+    //1. from workspace
+    def file = rootProject.file("LATEST_CHANGELOG.md")
+    if (file.exists()) {
+        try {
+            def text = file.getText('UTF-8').trim()
+            if (text) {
+                logger.lifecycle("Using changelog from file: ${file}")
+                return text
+            } else {
+                logger.lifecycle("LATEST_CHANGELOG.md exists but is empty.")
+            }
+        } catch (Exception e) {
+            logger.warn("Error from reading LATEST_CHANGELOG.md: ${e.message}")
+        }
+    } else {
+        logger.lifecycle("LATEST_CHANGELOG.md not found in project root.")
+    }
+
+    //2. from Git-HEAD
+    try {
+        ByteArrayOutputStream stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'show', 'HEAD:LATEST_CHANGELOG.md'
+            standardOutput = stdout
+            // don't fail build if git command fails
+            ignoreExitValue = true
+        }
+        def gitText = stdout.toString('UTF-8').trim()
+        if (gitText) {
+            logger.lifecycle("Using changelog from git HEAD:LATEST_CHANGELOG.md")
+            return gitText
+        } else {
+            logger.lifecycle("No LATEST_CHANGELOG.md content found at git HEAD.")
+        }
+    } catch (Exception e) {
+        logger.warn("Error from executing 'git show': ${e.message}")
+    }
+
+    // 3. fallback
+    try {
+        def generated = generateLatestChangelog()
+        logger.lifecycle("Using generated changelog (fallback).")
+        return generated
+    } catch (Exception e) {
+        logger.warn("generateLatestChangelog() failed: ${e.message}")
+    }
+
+    logger.lifecycle("No changelog found — returning empty string!")
+    return ""
+}
