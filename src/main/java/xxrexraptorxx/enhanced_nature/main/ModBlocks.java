@@ -1,5 +1,6 @@
 package xxrexraptorxx.enhanced_nature.main;
 
+import java.util.function.Function;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -14,8 +15,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xxrexraptorxx.enhanced_nature.blocks.BlockQuicksand;
-
-import java.util.function.Function;
 
 public class ModBlocks {
 
