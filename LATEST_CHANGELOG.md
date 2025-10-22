@@ -1,4 +1,2 @@
-## v.4.0.0  for MC 1.21.5
-### Features
+# [v.3.0.0 for MC 1.21.10, 1.21.9](https://github.com/XxRexRaptorxX/EnhancedNature/tree/v.3.0.0-dev1)
 
-* MagmaCore integration ([d0440ef](https://github.com/XxRexRaptorxX/EnhancedNature/commit/d0440ef6dc7e405a21326ae9aa586c730b177063))
