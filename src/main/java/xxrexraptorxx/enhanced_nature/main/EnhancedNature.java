@@ -24,6 +24,7 @@ public class EnhancedNature {
         ModRegistry.register(References.MODID, References.NAME, References.URL);
     }
 
+
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.QUICK_SAND);

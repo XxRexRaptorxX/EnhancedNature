@@ -24,28 +24,29 @@ public class BlockQuicksand extends FallingBlock {
         super(properties);
     }
 
+
     @Override
-    public VoxelShape getCollisionShape(
-            BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return CUSTOM_SHAPE;
     }
 
+
     @Override
-    protected void entityInside(
-            BlockState state, Level level, BlockPos pos, Entity entityIn, InsideBlockEffectApplier effectApplier) {
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entityIn, InsideBlockEffectApplier effectApplier) {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
             entity.makeStuckInBlock(state, new Vec3(0.25D, 0.10D, 0.25D));
-            if (entity.getEyePosition().y < pos.getY() + 1)
-                entity.hurt(level.damageSources().inWall(), 1.0F);
+            if (entity.getEyePosition().y < pos.getY() + 1) entity.hurt(level.damageSources().inWall(), 1.0F);
         }
     }
+
 
     @Override
     protected MapCodec<? extends FallingBlock> codec() {
         return CODEC;
     }
+
 
     @Override
     public int getDustColor(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
